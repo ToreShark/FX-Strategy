@@ -209,8 +209,9 @@ async function fetchAndRunStrategy(symbol, interval, startDate, endDate) {
     }
 }
 
-// Запуск стратегии
-fetchAndRunStrategy('EURUSDT', '1m', '2024-03-03', '2024-05-06');
+// Запуск стратегии с измененными датами
+fetchAndRunStrategy('EURUSDT', '1m', '2024-02-01', '2024-02-27');
+
 
 export {
     fetchAndRunStrategy,
