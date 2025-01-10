@@ -1,18 +1,19 @@
 import fetch from 'node-fetch';
 
 const strategyConfig = {
-    symbol: 'EURUSDT',
+    symbol: 'BTCUSDT',
     interval: '1m',
-    startPrice: 1.1,
-    high: 1.15,
-    low: 1.05,
-    orderQty: 10,
-    orderDollarValue: 10,
-    initialAmount: 500,
-    tickRound: 5,
-    qtyRound: 4,
-    comm: 0.001
+    startPrice: 69666, // Используем цену закрытия свечи как стартовую
+    high: 69677.96, // Максимальная цена свечи
+    low: 69666, // Минимальная цена свечи
+    orderQty: 10, // Количество ордеров в сетке
+    orderDollarValue: 10, // Сумма в долларах на каждый ордер
+    initialAmount: 500, // Начальный баланс
+    tickRound: 2, // Округление цены до 2 знаков
+    qtyRound: 4, // Округление объема до 4 знаков
+    comm: 0.001 // Комиссия 0.1%
 };
+
 
 async function fetchCandles(symbol, interval, startTime, endTime) {
     const url = `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=${interval}&startTime=${startTime}&endTime=${endTime}&limit=1000`;
@@ -210,7 +211,7 @@ async function fetchAndRunStrategy(symbol, interval, startDate, endDate) {
 }
 
 // Запуск стратегии с измененными датами
-fetchAndRunStrategy('EURUSDT', '1m', '2024-02-01', '2024-02-27');
+fetchAndRunStrategy('BTCUSDT', '1m', '2024-02-01', '2024-02-27');
 
 
 export {

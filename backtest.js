@@ -47,7 +47,7 @@ async function fetchCandlesForPeriod(symbol, interval, startDate, endDate) {
 (async () => {
     const symbol = 'BTCUSDT'; // Валютная пара
     const interval = '1m'; // Интервал
-    const startDate = '2023-02-10'; // Начальная дата
+    const startDate = '2023-12-31'; // Начальная дата
     const endDate = new Date().toISOString().split('T')[0]; // Конечная дата (сегодняшний день)
 
     const candles = await fetchCandlesForPeriod(symbol, interval, startDate, endDate);
