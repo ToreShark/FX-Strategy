@@ -3,14 +3,14 @@ import fetch from "node-fetch";
 const strategyConfig = {
     symbol: "BTCUSDT",
     interval: "1m",
-    gridRange: 0.05,     // Увеличиваем до 0.5% для большего диапазона сетки
+    gridRange: 0.07,     // Увеличиваем до 0.5% для большего диапазона сетки
     orderQty: 10,          // Уменьшаем количество ордеров
     orderDollarValue: 20, // Увеличиваем размер ордера
     initialAmount: 500,
     tickRound: 2,
     qtyRound: 4,
     comm: 0.001,
-    takeProfitPercent: 0.03  // Увеличиваем до 0.3%
+    takeProfitPercent: 0.04  // Увеличиваем до 0.3%
 };
 
 async function fetchCandles(symbol, interval, startTime, endTime) {
@@ -271,7 +271,7 @@ async function fetchAndRunStrategy(symbol, interval, startDate, endDate) {
 }
 
 // Запуск стратегии с измененными датами
-fetchAndRunStrategy("BTCUSDT", "1m", "2024-11-15", "2024-12-30");
+fetchAndRunStrategy("BTCUSDT", "1m", "2024-01-02", "2024-06-05");
 
 export {
   fetchAndRunStrategy,
