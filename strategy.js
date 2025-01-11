@@ -5,7 +5,7 @@ const strategyConfig = {
     interval: "1m",
     gridRange: 0.07,     // Увеличиваем до 0.5% для большего диапазона сетки
     orderQty: 10,          // Уменьшаем количество ордеров
-    orderDollarValue: 20, // Увеличиваем размер ордера
+    orderDollarValue: 10, // Увеличиваем размер ордера
     initialAmount: 500,
     tickRound: 2,
     qtyRound: 4,
@@ -271,7 +271,7 @@ async function fetchAndRunStrategy(symbol, interval, startDate, endDate) {
 }
 
 // Запуск стратегии с измененными датами
-fetchAndRunStrategy("BTCUSDT", "1m", "2024-01-02", "2024-06-05");
+fetchAndRunStrategy("BTCUSDT", "1m", "2024-02-01", "2024-03-27");
 
 export {
   fetchAndRunStrategy,
